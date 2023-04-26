@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "SnapGPT Chrome Extension",
+  "version": "1.0",
+  "description": "A Chrome extension for OCR text extraction and ChatGPT integration.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [],
+  "background": {},
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
