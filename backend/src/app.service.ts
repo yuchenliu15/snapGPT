@@ -6,6 +6,7 @@ export class FileUploadService {
   async upload(file, name) {
     const bucketS3 = 'snapgpt-screenshots';
     console.log(file);
+    console.log(file.buffer);
     await this.uploadS3(file.buffer, bucketS3, name);
   }
 
@@ -28,7 +29,6 @@ export class FileUploadService {
       accessKeyId: process.env.aws_access_key_id,
       secretAccessKey: process.env.aws_secret_access_key,
     };
-    console.log(cred);
     return new S3Client({
       region: 'us-east-2',
       credentials: cred,

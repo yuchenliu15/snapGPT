@@ -3,6 +3,9 @@ import { FileInterceptor } from '@nestjs/platform-express/multer';
 import { FileUploadService } from './app.service';
 import { analyze_document_text } from './ocr';
 import { Post, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { createReadStream, readFileSync } from 'fs';
+import { join } from 'path';
+
 
 @Controller('screenshot')
 export class AppController {
@@ -22,8 +25,10 @@ export class AppController {
   @Post(':name')
   @UseInterceptors(FileInterceptor('file'))
   async upload(@UploadedFile() file, @Param('name') name: string) {
-    console.log(file);
-    console.log(name);
-    return await this.service.upload(file, name);
+    const f = readFileSync(join(process.cwd(), file.path));
+    console.log(f);
+    await this.service.upload(f, name);
+    const res = await analyze_document_text(name);
+    return res;
   }
 }
