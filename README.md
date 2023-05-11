@@ -66,13 +66,15 @@ git clone https://github.com/yuchenliu15/SnapGPT.git
 
 The repository is organized as follows:
 
-- `src`: Contains the source code for the browser extension, including HTML, CSS, and JavaScript files.
-  - `js`: Contains JavaScript files for the extension.
-    - `popup.js`: The JavaScript logic for the extension's popup, including OCR, chat functionality, and communication with the background script.
-    - `background.js`: The background script that sends requests to the Express server.
-  - `popup.html`: The extension's popup layout.
+- `backend`: Contains backend code for the extension.
+- `ocr`: Contains OCR-related code for text extraction.
+- `js`: Contains JavaScript files for the extension.
+  - `popup.js`: The JavaScript logic for the extension's popup, including OCR, chat functionality, and communication with the background script.
+  - `background.js`: The background script that sends requests to the Express server.
 - `chatgpt`: Contains the code for the local Express server.
   - `server.js`: The Express server that handles communication with the OpenAI API.
+- `popup.html`: The extension's popup layout.
+- `manifest.json`: The manifest file that defines the extension's configuration, permissions, and resources.
 
 
 ### Prerequisites
