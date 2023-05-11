@@ -6,11 +6,18 @@ import { fromIni } from '@aws-sdk/credential-providers';
 // Set the AWS Region.
 const REGION = 'us-east-2'; //e.g. "us-east-2"
 const profileName = 'default';
-
+console.log({
+  accessKeyId: process.env.aws_access_key_id,
+  secretAccessKey: process.env.aws_secret_access_key,
+});
 // Create SNS service object.
 const textractClient = new TextractClient({
   region: REGION,
-  credentials: fromIni({ profile: profileName }),
+  /*fromIni({ profile: profileName })*/
+  credentials: {
+    accessKeyId: process.env.aws_access_key_id,
+    secretAccessKey: process.env.aws_secret_access_key,
+  },
 });
 
 const displayBlockInfo = async (response) => {
