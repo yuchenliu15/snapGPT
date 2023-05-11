@@ -106,4 +106,6 @@ To execute the code, follow the [Installation](#installation) and [Usage](#usage
 
 ## Observations
 
-SnapGPT provides a seamless experience for users to extract text from images and interact with an AI model. It combines OCR technology with the power of GPT-3.5-turbo.
+We opted to use the express server for sending api requests and AWS Textract for OCR.
+![image](https://github.com/yuchenliu15/snapGPT/assets/57072903/3f43d939-a21c-429e-bbe9-d32688a022a6)
+
