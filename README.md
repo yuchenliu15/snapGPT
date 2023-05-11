@@ -15,6 +15,7 @@ SnapGPT is a browser extension that allows users to extract text from images usi
     - [Local Express Server](#local-express-server)
   - [Example Commands](#example-commands)
   - [Observations](#observations)
+  - [Backend](#backend)
 
 ## Technical Overview
 
@@ -108,4 +109,20 @@ To execute the code, follow the [Installation](#installation) and [Usage](#usage
 
 We opted to use the gpt3.5-turbo model, express server for sending api requests and AWS Textract for OCR.
 <img width="1170" alt="image" src="https://github.com/yuchenliu15/snapGPT/assets/57072903/831e3720-a3dd-441c-88a7-4b6f16ba8563">
+
+## Backend
+
+- Interact with Amazon OCR API
+- Manage uploaded instances
+- Containerization for deployment and iteration speed
+
+    Run locally using Docker:
+    ```
+    cd backend
+    docker build -t nest-cloud-run .
+    docker run --env-file=.env -p80:3000 nest-cloud-run
+    ```
+    
+    (Need to add .env file containing AWS credentials)
+
 
