@@ -106,6 +106,6 @@ To execute the code, follow the [Installation](#installation) and [Usage](#usage
 
 ## Observations
 
-We opted to use the express server for sending api requests and AWS Textract for OCR.
-![image](https://github.com/yuchenliu15/snapGPT/assets/57072903/3f43d939-a21c-429e-bbe9-d32688a022a6)
+We opted to use the gpt3.5-turbo model, express server for sending api requests and AWS Textract for OCR.
+<img width="1170" alt="image" src="https://github.com/yuchenliu15/snapGPT/assets/57072903/831e3720-a3dd-441c-88a7-4b6f16ba8563">
 
